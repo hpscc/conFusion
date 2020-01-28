@@ -225,17 +225,12 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <!-- create a group of carousel buttons  -->
-                    <div class="btn-group" id="carouselButton">
-                        <!-- introduce a pause button -->
-                        <button class="btn btn-danger btn-sm" id="carousel-pause">
-                            <span class="fa fa-pause"></span>
-                        </button>
-                        <!-- introduce a play button -->
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>
-                    </div>
+                    
+                    <!-- introduce a play/pause button -->
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
+                    
                 </div>
             </div>
         </div>
@@ -293,13 +288,23 @@
         $(document).ready(function() {
             // set sliding interval to 2000ms 
             $('#mycarousel').carousel({interval: 2000});
-            // activate pause button 
-            $('#carousel-pause').click(function() {
-                $('#mycarousel').carousel('pause');
-            });
-            // activate play button 
-            $('#carousel-play').click(function() {
-                $('#mycarousel').carousel('cycle');
+            // activate play/pause button 
+            $('#carouselButton').click(function() {
+                // identifying the current state of the button in order to flip it 
+                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
+                    // pause the carousel
+                    $('#mycarousel').carousel('pause');
+                    // now flip the button
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                }
+                else if ($('#carouselButton').children('span').hasClass('fa-play')) {
+                    // play the carousel
+                    $('#mycarousel').carousel('cycle');
+                    // now flip the button
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+                }
             });
         })
     </script>
