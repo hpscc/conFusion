@@ -83,3 +83,19 @@ body{
 // Lets install the node module by typing npm install save dev--save dev node-sass. 
 // So this way, we will save this node-sass package as a development dependency in our package.json file. 
 // Once the installation is complete, we're going to add in a script into our package.json file. 
+
+
+
+// Assignment-4
+.modal-header {
+    background-color: $background-dark;
+    color: floralwhite;
+
+    .close {
+        color: floralwhite;
+    }
+}
+
+.modal-body {
+    background-color: $background-pale;
+}

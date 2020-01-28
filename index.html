@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="login-button">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>  
@@ -169,11 +169,9 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
+                <!-- reserve table button container -->
                 <div class="col-12 col-sm-3 align-self-center">
-                    <!-- <button type="button" class="btn btn-warning btn-sm btn-block">Reserve Table</button> -->
-                    <a class="btn btn-warning btn-sm btn-block" role="button" 
-                        data-toggle="modal" data-target="#reservationModal">Reserve Table
-                    </a>
+                    <a id="reserve-button" class="btn btn-warning btn-sm btn-block" role="button">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -306,6 +304,22 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
             });
+        })
+    </script>
+    <!-- activating login modal -->
+    <script>
+        $(document).ready(function() {
+            $('#login-button').click(function() {
+                $('#loginModal').modal('toggle');
+            })
+        })
+    </script>
+    <!-- activating reservation modal -->
+    <script>
+        $(document).ready(function() {
+            $('#reserve-button').click(function() {
+                $('#reservationModal').modal('toggle');
+            })
         })
     </script>
 </body>
