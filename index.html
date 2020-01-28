@@ -225,6 +225,17 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <!-- create a group of carousel buttons  -->
+                    <div class="btn-group" id="carouselButton">
+                        <!-- introduce a pause button -->
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <!-- introduce a play button -->
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,7 +288,21 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+    <!-- introduce JQuery code to make the carousel buttons (play/pause) work -->
+    <script>
+        $(document).ready(function() {
+            // set sliding interval to 2000ms 
+            $('#mycarousel').carousel({interval: 2000});
+            // activate pause button 
+            $('#carousel-pause').click(function() {
+                $('#mycarousel').carousel('pause');
+            });
+            // activate play button 
+            $('#carousel-play').click(function() {
+                $('#mycarousel').carousel('cycle');
+            });
+        })
+    </script>
 </body>
 
 </html>
