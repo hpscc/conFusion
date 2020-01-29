@@ -281,47 +281,10 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- introduce JQuery code to make the carousel buttons (play/pause) work -->
-    <script>
-        $(document).ready(function() {
-            // set sliding interval to 2000ms 
-            $('#mycarousel').carousel({interval: 2000});
-            // activate play/pause button 
-            $('#carouselButton').click(function() {
-                // identifying the current state of the button in order to flip it 
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    // pause the carousel
-                    $('#mycarousel').carousel('pause');
-                    // now flip the button
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                }
-                else if ($('#carouselButton').children('span').hasClass('fa-play')) {
-                    // play the carousel
-                    $('#mycarousel').carousel('cycle');
-                    // now flip the button
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-            });
-        })
-    </script>
-    <!-- activating login modal -->
-    <script>
-        $(document).ready(function() {
-            $('#login-button').click(function() {
-                $('#loginModal').modal('toggle');
-            })
-        })
-    </script>
-    <!-- activating reservation modal -->
-    <script>
-        $(document).ready(function() {
-            $('#reserve-button').click(function() {
-                $('#reservationModal').modal('toggle');
-            })
-        })
-    </script>
+    
+    <!-- separating out JS code to scripts.js file -->
+    <script src="js/scripts.js"></script>
+    
 </body>
 
 </html>
